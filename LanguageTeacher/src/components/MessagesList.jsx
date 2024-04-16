@@ -53,7 +53,7 @@ export const MessagesList = () => {
       {messages.length === 0 && (
         <div className="h-full w-full grid place-content-center text-center">
           <h2 className="text-8xl font-bold text-white/90 italic">
-            Wawa Sensei
+            Agoston
             <br />
             Japanese Language School
           </h2>

@@ -1,0 +1,27 @@
+{
+  "openFiles": [
+    "src/App.tsx",
+    "src/components/button.tsx",
+    "src/components/container.tsx",
+    "src/components/fade-in.tsx",
+    "src/components/header.tsx",
+    "src/components/section/hero.tsx",
+    "src/components/section/usps.tsx",
+    "src/components/section/video-carousel.tsx",
+    "tailwind.config.cjs",
+    "src/movies.ts",
+    "src/styles.css"
+  ],
+  "activeFile": "src/App.tsx",
+  "template": "vite-react-ts",
+  "options": {
+    "tailwind": true
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "framer-motion": "^11.0.8",
+    "react-use": "^17.5.0",
+    "tailwind-merge": "^2.2.1"
+  }
+}

@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --my-color: #fff;
+  --selection-color: #fff;
+  --selection-bg-color: #fff;
+}
+
+[data-theme="dark"] {
+  --my-color: #000;
+  color-scheme: dark;
+  --selection-color: #000000;
+  --selection-bg-color: #ffffff;
+}
+
+[data-theme="light"] {
+  --my-color: #ffabc8;
+  color-scheme: light;
+  --selection-color: #ffffff;
+  --selection-bg-color: #000000;
+}
+
+::selection {
+  background-color: var(--selection-bg-color);
+  color: var(--selection-color);
+}
+
+/* Hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hyphens {
+  hyphens: auto;
+}
+
+.rotate {
+  transition: transform 0.1s ease;
+  transform: rotate(-90deg);
+}
+
+.rotate-reverse {
+  transition: transform 0.1s ease;
+  transform: rotate(0deg);
+}
+
+.fade-in {
+  animation: fade-in-animation 200ms;
+}
+
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slide-up-animation 200ms;
+}
+
+.slide-down {
+  animation: slide-down-animation 70ms;
+}
+
+@keyframes slide-down-animation {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up-animation {
+  0% {
+    transform: translateY(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-right {
+  animation: slide-right-animation 200ms;
+}
+
+@keyframes slide-right-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-right-with-fade {
+  animation: slide-right-animation 150ms;
+}
+
+@keyframes slide-right-animation {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* For react-colorful */
+.color-picker .react-colorful {
+  width: 100%;
+  height: 7.5rem;
+}
+.color-picker .react-colorful__hue {
+  height: 1rem;
+}
+.color-picker .react-colorful__pointer {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+/* For the Link banner */
+.link-banner {
+  border-radius: 1rem;
+  height: fit-content;
+}
+
+/* Theme */
+
+@layer components {
+  .react-select-container .react-select__control {
+    @apply bg-base-200 hover:border-neutral-content;
+  }
+
+  .react-select-container .react-select__menu {
+    @apply bg-base-100 border-neutral-content border rounded-md;
+  }
+  /* 
+  .react-select-container .react-select__menu-list {
+    @apply h-20;
+  } */
+
+  .react-select-container .react-select__input-container,
+  .react-select-container .react-select__single-value {
+    @apply text-base-content;
+  }
+}
+
+.primary-btn-gradient {
+  box-shadow: inset 0px -9px 10px oklch(var(--p));
+}
+
+.primary-btn-gradient:hover {
+  box-shadow: inset 0px -20px 40px #00436c;
+}
+
+.line-break * {
+  overflow-y: hidden;
+}
+
+/* Reader view custom stylings */
+.reader-view {
+  line-height: 2.8rem;
+}
+.reader-view p {
+  font-size: 1.15rem;
+  line-height: 2.5rem;
+}
+.reader-view h1 {
+  font-size: 2.2rem;
+}
+.reader-view h2 {
+  line-height: 4rem;
+  font-size: 1.9rem;
+}
+.reader-view h3 {
+  line-height: 3.5rem;
+  font-size: 1.6rem;
+}
+.reader-view h4 {
+  font-size: 1.3rem;
+}
+.reader-view h5 {
+  font-size: 1.1rem;
+}
+.reader-view li {
+  list-style: inside;
+  margin-left: 2rem;
+}
+.reader-view a {
+  text-decoration: underline;
+}
+.reader-view b {
+  font-weight: bolder;
+}
+.reader-view pre,
+.reader-view code {
+  font-family: "Courier New", Courier, monospace;
+}
+.reader-view blockquote {
+  opacity: 50%;
+  padding-left: 1.5rem;
+  border-left: solid 3px;
+}
+.reader-view img {
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+}
+.reader-view pre {
+  padding: 1rem;
+  line-height: normal;
+}
+.reader-view code {
+  padding: 0.15rem 0.4rem 0.15rem 0.4rem;
+}
+
+[data-theme="dark"] .reader-view code,
+[data-theme="dark"] .reader-view pre {
+  background-color: rgb(49, 49, 49);
+  border-radius: 8px;
+}
+[data-theme="light"] .reader-view code,
+[data-theme="light"] .reader-view pre {
+  background-color: rgb(230, 230, 230);
+  border-radius: 8px;
+}
+
+.rainbow {
+  background: linear-gradient(
+    45deg,
+    #ff00004b,
+    #ff99004b,
+    #33cc334b,
+    #0099cc4b,
+    #9900cc4b,
+    #ff33cc4b
+  );
+  background-size: 400% 400%;
+  animation: rainbow 30s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.custom-file-input::file-selector-button {
+  cursor: pointer;
+}
